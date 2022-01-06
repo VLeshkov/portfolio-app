@@ -33,8 +33,10 @@ body {
 
 header {
   height: 90px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
+  background-image: url('assets/img/bg.png');
   @extend %font-inter-regular;
 
   img {
@@ -68,4 +70,51 @@ header {
     padding: 20px;
     font-weight: 700;
   }
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.section-hero {
+  height: 820px;
+  background-image: url('assets/img/bg.png');
+  background-repeat: no-repeat;
+  background-position: center -90px;
+  padding-top: 160px;
+  padding-left: 80px;
+}
+
+.hero-content {
+  width: 490px;
+  padding: 0;
+  margin: 0;
+
+  p {
+    @extend %font-inter-regular;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    line-height: 40px;
+  }
+}
+
+h1 {
+  @extend %font-merriweather;
+  color: #FFF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  height: 55px;
+  width: 220px;
+  background-color: #BDAE82;
+  border: none;
+  color: #000;
+  @extend %font-inter-regular;
+}
+
+button:hover {
+  color: #FFF;
 }
