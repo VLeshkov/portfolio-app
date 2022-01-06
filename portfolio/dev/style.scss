@@ -23,11 +23,14 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -44,9 +47,7 @@ header {
   background-image: url('assets/img/bg.png');
   @extend %font-inter-regular;
 
-  img {
-    margin: 20px;
-  }
+
 
   nav {
     width: 500px;
@@ -58,23 +59,54 @@ header {
   ul {
     list-style: none;
     display: flex;
+    justify-content: end;
+    gap: 20px;
   }
 
   li {
     display: inline-block;
-    margin-right: 20px;
+    margin: 0;
     padding: 0;
     padding-right: 11px;
   }
 
   a {
     @extend %font-inter-regular;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: #BDAE82; 
   }
 
   .switch-lng {
     padding: 20px;
+    margin: 0;
     font-weight: 700;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
   }
+
+  .switch-selected {
+    color: #BDAE82
+  }
+}
+
+.logo {
+  margin: 20px;
+  height: 50px;
+  width: 50px;
+
+  background-image: url('./assets/svg/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;  
+  transition: 0.3s;
+}
+
+.logo:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
 }
 
 main {
@@ -120,6 +152,7 @@ button {
   border: none;
   color: #000;
   @extend %font-inter-regular;
+  transition: 0.3s;
 }
 
 button:hover {
