@@ -1,10 +1,10 @@
-h1 {
+.section-title h2, h1 {
   font-family: "Merriweather", serif;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 60px;
 }
 
-button, .hero-content p, header a, header {
+.skills-cards div p, button, .hero-content p, header a, header {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -12,6 +12,11 @@ button, .hero-content p, header a, header {
   line-height: 50px;
   color: #FFF;
   text-decoration: none;
+}
+
+.skills-cards div {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -62,12 +67,14 @@ main {
 }
 
 .section-hero {
-  height: 820px;
+  height: 660px;
   background-image: url("assets/img/bg.png");
   background-repeat: no-repeat;
   background-position: center -90px;
+  margin: 0;
   padding-top: 160px;
   padding-left: 80px;
+  padding-bottom: 0;
 }
 
 .hero-content {
@@ -97,6 +104,71 @@ button {
 
 button:hover {
   color: #FFF;
+}
+
+.section-skills, .section-portfolio {
+  padding: 0 20px;
+}
+
+.section-title {
+  width: 50%;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
+}
+.section-title h2 {
+  width: fit-content;
+  background-color: #000;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  font-size: 40px;
+  line-height: 80px;
+  color: #BDAE82;
+  text-align: center;
+}
+
+.skills-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.skills-cards div {
+  height: 240px;
+  width: 320px;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.skills-cards div p {
+  text-align: center;
+}
+.skills-cards div p:nth-child(1) {
+  margin-top: 100px;
+  padding: 0;
+  font-weight: 700;
+  line-height: 40px;
+}
+.skills-cards div p:nth-child(2) {
+  padding: 0 20px;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 36px;
+}
+.skills-cards div:nth-child(1) {
+  background-image: url("assets/svg/skill-camera.svg");
+}
+.skills-cards div:nth-child(2) {
+  background-image: url("assets/svg/skill-video.svg");
+}
+.skills-cards div:nth-child(3) {
+  background-image: url("assets/svg/skill-image.svg");
+}
+.skills-cards div:nth-child(4) {
+  background-image: url("assets/svg/skill-mic.svg");
 }
 
 /*# sourceMappingURL=style.css.map */
