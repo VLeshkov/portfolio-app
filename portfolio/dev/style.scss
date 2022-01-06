@@ -1,11 +1,71 @@
+%temp-border {
+  border: solid 1px red;
+}
+
+%font-merriweather {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+%font-inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 50px;
+  color: #FFF;
+  text-decoration: none;
+}
+
 body {
   background-color: black;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .container {
   width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  @extend %font-inter-regular;
+
+  img {
+    margin: 20px;
+  }
+
+  nav {
+    width: 500px;
+    margin-left: auto; // элемент - часть флексбокса, поэтому, чтобы он не 
+        // расположился по центру, задаем ему этот параметр
+        // таким образом он занимает все свободное пространство справа
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0;
+    padding-right: 11px;
+  }
+
+  a {
+    @extend %font-inter-regular;
+  }
+
+  .switch-lng {
+    padding: 20px;
+    font-weight: 700;
+  }
 }

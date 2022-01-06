@@ -1,13 +1,51 @@
+header a, header {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 50px;
+  color: #FFF;
+  text-decoration: none;
+}
+
 body {
   background-color: black;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .container {
   width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+header img {
+  margin: 20px;
+}
+header nav {
+  width: 500px;
+  margin-left: auto;
+}
+header ul {
+  list-style: none;
+  display: flex;
+}
+header li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 0;
+  padding-right: 11px;
+}
+header .switch-lng {
+  padding: 20px;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */
