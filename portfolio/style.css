@@ -1,10 +1,10 @@
-.section-title h2, h1 {
+.price-card div, .price-card h3, .section-title h2, h1 {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 60px;
 }
 
-.skills-cards div p, button, .hero-content p, header a, header {
+.price-card span, .skills-cards div p, button, .hero-content p, header a, header {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -14,7 +14,7 @@
   text-decoration: none;
 }
 
-.skills-cards div {
+.price-card span, .skills-cards div {
   padding: 0;
   margin: 0;
 }
@@ -253,6 +253,51 @@ button:hover {
 }
 .video-player button:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.price-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.price-card {
+  border: solid #BDAE82 3px;
+  box-sizing: border-box;
+  width: 450px;
+  height: 505px;
+}
+.price-card h3 {
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 56px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+.price-card div {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  color: #BDAE82;
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin: 0;
+}
+.price-card span {
+  display: block;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+}
+.price-card button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

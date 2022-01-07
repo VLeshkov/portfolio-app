@@ -292,3 +292,56 @@ button:hover {
     contrast(87%);
   }
 }
+
+.price-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.price-card {
+  border: solid #BDAE82 3px;
+  box-sizing: border-box;
+  width: 450px;
+  height: 505px;
+
+  h3 {
+    @extend %font-merriweather;
+    color: #FFF;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 56px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  div {
+    @extend %font-merriweather;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: #BDAE82;
+    padding-top:0;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  span {
+    display: block;
+    @extend %null-padding-margin;
+    @extend %font-inter-regular;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+  }
+}
