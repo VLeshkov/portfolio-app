@@ -345,3 +345,64 @@ button:hover {
     margin-top: 40px;
   }
 }
+
+.section-contacts {
+  margin-top: 100px;
+  background-image: url('/assets/img/contacts-bg.png');
+  height: 700px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.contacts-container {
+  width: 450px;
+  padding-top: 30px;
+
+
+  h2 {
+    text-align: left;
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    color: #BDAE82;
+    margin-bottom: 40px;
+  }
+
+  input {
+    display: block;
+    border: solid #BDAE82 2px;
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  input::placeholder, textarea::placeholder {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    color: #BDAE82;
+    padding-left: 15px;
+  }
+
+  textarea {
+    display: block;
+    border: solid #BDAE82 2px;
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+
+
+  button {
+    display: block;
+    margin-top: 30px;
+  }
+}
