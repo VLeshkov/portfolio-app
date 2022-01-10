@@ -236,6 +236,9 @@ button:hover {
   gap: 25px;
   height: 1145px;
 }
+.portfolio-cards div {
+  height: 560px;
+}
 
 .video-player {
   position: relative;
@@ -365,10 +368,20 @@ footer {
   font-size: 20px;
   line-height: 50px;
   color: #FFFFFF;
+  padding: 0 20px;
+}
+footer .copyright {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+footer .rs-school {
+  padding-left: 55px;
 }
 footer ul {
   list-style: none;
   display: flex;
+  gap: 20px;
 }
 footer li {
   display: inline-block;
