@@ -4,7 +4,7 @@
   font-size: 60px;
 }
 
-.price-card span, .skills-cards div p, button, .hero-content p, header a, header {
+.price-card span, .skills-cards div p, button, .hero-content p, header, a {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -33,12 +33,24 @@ body {
   padding: 0 20px;
 }
 
+a {
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #BDAE82;
+}
+
+button {
+  cursor: pointer;
+}
+
 header {
   height: 90px;
   margin: 0;
   display: flex;
   justify-content: space-between;
-  background-image: url("assets/img/bg.png");
+  background-image: url("assets/img/bg.jpg");
 }
 header nav {
   width: 500px;
@@ -56,12 +68,6 @@ header li {
   padding: 0;
   padding-right: 11px;
 }
-header a {
-  transition: 0.3s;
-}
-header a:hover {
-  color: #BDAE82;
-}
 header .switch-lng {
   padding: 20px;
   margin: 0;
@@ -69,6 +75,9 @@ header .switch-lng {
   width: 70px;
   display: flex;
   justify-content: space-between;
+}
+header .switch-lng span {
+  cursor: pointer;
 }
 header .switch-selected {
   color: #BDAE82;
@@ -93,9 +102,9 @@ main {
   padding: 0;
 }
 
-.section-hero {
+.hero {
   height: 660px;
-  background-image: url("assets/img/bg.png");
+  background-image: url("assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center -90px;
   margin: 0;
@@ -134,8 +143,8 @@ button:hover {
   color: #FFF;
 }
 
-.section-skills, .section-portfolio,
-.section-video, .section-price, .section-contacts {
+.skills, .portfolio,
+.video, .price, .contacts {
   padding: 0 20px;
 }
 
@@ -304,9 +313,9 @@ button:hover {
   margin-top: 40px;
 }
 
-.section-contacts {
+.contacts {
   margin-top: 100px;
-  background-image: url("assets/img/contacts-bg.png");
+  background-image: url("assets/img/contacts-bg.jpg");
   height: 700px;
   display: flex;
   flex-direction: row-reverse;
@@ -389,6 +398,7 @@ footer li {
   width: 32px;
   height: 32px;
   background-repeat: no-repeat;
+  transition: 0.3s;
 }
 footer li:nth-child(1) {
   background-image: url("assets/svg/inst.svg");
@@ -401,6 +411,10 @@ footer li:nth-child(3) {
 }
 footer li:nth-child(4) {
   background-image: url("assets/svg/pinterest.svg");
+}
+footer li:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
