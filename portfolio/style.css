@@ -182,12 +182,20 @@ button:hover {
   line-height: 40px;
 }
 .skills-cards div p:nth-child(2) {
-  padding: 0 20px;
+  padding: 1px 20px;
   margin: 0;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 36px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 36px;
+  /* or 200% */
+  text-align: center;
+  color: #FFFFFF;
 }
 .skills-cards div:nth-child(1) {
   background-image: url("assets/svg/skill-camera.svg");
@@ -208,7 +216,7 @@ button:hover {
   margin-right: auto;
 }
 .portfolio-controls button {
-  border: solid 1px #BDAE82;
+  border: solid 2px #BDAE82;
   background-color: transparent;
   color: #BDAE82;
 }
@@ -276,7 +284,7 @@ button:hover {
   font-size: 28px;
   line-height: 56px;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 0;
 }
