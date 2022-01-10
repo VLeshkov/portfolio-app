@@ -29,8 +29,7 @@ html {
 
 body {
   background-color: black;
-  padding: 0;
-  margin: 0;
+  @extend %null-padding-margin;
 }
 
 .container {
@@ -47,13 +46,9 @@ header {
   background-image: url('assets/img/bg.png');
   @extend %font-inter-regular;
 
-
-
   nav {
     width: 500px;
-    margin-left: auto; // элемент - часть флексбокса, поэтому, чтобы он не 
-        // расположился по центру, задаем ему этот параметр
-        // таким образом он занимает все свободное пространство справа
+    margin-left: auto;
   }
 
   ul {
@@ -257,21 +252,16 @@ button:hover {
     border: solid 2px #BDAE82;
     background-color: transparent;
     color: #BDAE82;
+    transition: 0.3s;
   }
   button:hover {
-    border: solid 1px #BDAE82;
-    background-color: transparent;
     color: #FFF;
   }
   .button-checked {
     background-color: #BDAE82;
-    border: none;
     color: #000;
-    transition: 0.3s;
   }
   .button-checked:hover {
-    background-color: #BDAE82;
-    border: none;
     color: #FFF;
   }
 }

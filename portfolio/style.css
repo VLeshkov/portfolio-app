@@ -14,7 +14,7 @@
   text-decoration: none;
 }
 
-.price-card span, .skills-cards div {
+.price-card span, .skills-cards div, body {
   padding: 0;
   margin: 0;
 }
@@ -25,8 +25,6 @@ html {
 
 body {
   background-color: black;
-  padding: 0;
-  margin: 0;
 }
 
 .container {
@@ -219,21 +217,16 @@ button:hover {
   border: solid 2px #BDAE82;
   background-color: transparent;
   color: #BDAE82;
+  transition: 0.3s;
 }
 .portfolio-controls button:hover {
-  border: solid 1px #BDAE82;
-  background-color: transparent;
   color: #FFF;
 }
 .portfolio-controls .button-checked {
   background-color: #BDAE82;
-  border: none;
   color: #000;
-  transition: 0.3s;
 }
 .portfolio-controls .button-checked:hover {
-  background-color: #BDAE82;
-  border: none;
   color: #FFF;
 }
 
