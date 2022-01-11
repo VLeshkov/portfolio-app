@@ -1,3 +1,6 @@
+// Self-assessment
+console.log('Вёрстка валидная +10\nВёрстка семантическая +20\nВёрстка соответствует макету +48\nТребования к css + 12\nИнтерактивность, реализуемая через css +20\nВсего: 110 баллов');
+
 // Add change color function for the en/ru switch
 
 let switchEng = document.getElementById('switch-en');
