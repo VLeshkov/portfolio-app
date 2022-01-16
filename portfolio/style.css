@@ -335,14 +335,28 @@ button:hover {
   color: #BDAE82;
   margin-bottom: 40px;
 }
-.contacts-container input {
+.contacts-container input, .contacts-container textarea {
   display: block;
   border: solid #BDAE82 2px;
   box-sizing: border-box;
   background-color: transparent;
   width: 100%;
+  caret-color: #BDAE82;
+  padding-left: 15px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
+  color: #BDAE82;
+}
+.contacts-container input {
   height: 50px;
   margin-bottom: 20px;
+}
+.contacts-container textarea {
+  height: 100px;
+  resize: none;
 }
 .contacts-container input::placeholder, .contacts-container textarea::placeholder {
   font-family: Inter;
@@ -351,16 +365,9 @@ button:hover {
   font-size: 20px;
   line-height: 40px;
   color: #BDAE82;
-  padding-left: 15px;
 }
-.contacts-container textarea {
-  display: block;
-  border: solid #BDAE82 2px;
-  box-sizing: border-box;
-  background-color: transparent;
-  width: 100%;
-  height: 100px;
-  resize: none;
+.contacts-container input:focus, .contacts-container textarea:focus {
+  outline: 0;
 }
 .contacts-container button {
   display: block;
