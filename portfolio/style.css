@@ -1,4 +1,4 @@
-.price-card div, .price-card h3, .section-title h2, h1 {
+.price-card div, .price-card h3, .section-title h2, .hero-content h1 {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-size: 60px;
@@ -34,6 +34,11 @@ body {
   padding: 0 20px;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}
 
 a {
   transition: 0.3s;
@@ -64,7 +69,7 @@ button {
   }
 }
 .blackout {
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
@@ -77,7 +82,7 @@ button {
   height: 100%;
   left: calc(14%);
   background-color: black;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   animation: menu-appear 0.3s;
 }
@@ -162,6 +167,11 @@ header .logo {
   background-repeat: no-repeat;
   transition: 0.3s;
 }
+@media (max-width: 768px) {
+  header .logo {
+    margin-left: 60px;
+  }
+}
 header .hamburger {
   margin: 20px 64px 20px 10px;
   height: 50px;
@@ -188,11 +198,20 @@ main {
   background-image: url("assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center -90px;
-  background-size: calc(100%);
+  background-size: 100%;
   margin: 0;
   padding-top: 160px;
   padding-left: 80px;
-  padding-bottom: 0;
+  padding-bottom: 0px;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 500px;
+    padding-top: 55px;
+    padding-left: 60px;
+    background-position: 25px -90px;
+    background-size: auto 590px;
+  }
 }
 
 .hero-content {
@@ -200,16 +219,41 @@ main {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 768px) {
+  .hero-content {
+    width: 390px;
+  }
+}
+.hero-content h1 {
+  color: #FFF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 64px;
+    color: #FFFFFF;
+  }
+}
 .hero-content p {
   margin-top: 35px;
   margin-bottom: 25px;
   line-height: 40px;
 }
-
-h1 {
-  color: #FFF;
-  margin-top: 20px;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .hero-content p {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 button {
