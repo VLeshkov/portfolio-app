@@ -293,6 +293,17 @@ button:hover {
   color: #BDAE82;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .section-title {
+    margin-top: 45px;
+    margin-bottom: 65px;
+    background-image: linear-gradient(to top, #000 19px, #bdae82 19px, #bdae82 21px, #000 21px);
+  }
+  .section-title h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
 
 .skills-cards {
   display: flex;
@@ -317,16 +328,11 @@ button:hover {
 .skills-cards div p:nth-child(2) {
   padding: 1px 20px;
   margin: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 36px;
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 36px;
-  /* or 200% */
   text-align: center;
   color: #FFFFFF;
 }
@@ -341,6 +347,24 @@ button:hover {
 }
 .skills-cards div:nth-child(4) {
   background-image: url("assets/svg/skill-mic.svg");
+}
+@media (max-width: 768px) {
+  .skills-cards {
+    justify-content: space-around;
+    padding: 0 20px 60px 20px;
+  }
+  .skills-cards div {
+    height: 224px;
+    width: 300px;
+    margin-bottom: 35px;
+  }
+  .skills-cards div p:nth-child(1) {
+    margin-top: 80px;
+  }
+  .skills-cards div p:nth-child(2) {
+    padding: 0 10px;
+    line-height: 22px;
+  }
 }
 
 .portfolio-controls {
