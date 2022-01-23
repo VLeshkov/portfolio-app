@@ -56,12 +56,44 @@ button {
   cursor: pointer;
 }
 
+@-webkit-keyframes menu-appear {
+  0% {
+    right: -620px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@-moz-keyframes menu-appear {
+  0% {
+    right: -620px;
+  }
+  100% {
+    right: 0px;
+  }
+}
 @keyframes menu-appear {
   0% {
     right: -620px;
   }
   100% {
     right: 0px;
+  }
+}
+@-webkit-keyframes blackout-appear {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@-moz-keyframes blackout-appear {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 @keyframes blackout-appear {
@@ -80,6 +112,8 @@ button {
   z-index: 1;
   display: none;
   animation: blackout-appear 0.8s;
+  -webkit-animation: blackout-appear 0.8s;
+  -moz-animation: blackout-appear 0.8s;
 }
 .blackout .menu-bg {
   width: 620px;
@@ -89,6 +123,8 @@ button {
   position: fixed;
   z-index: 2;
   animation: menu-appear 0.5s;
+  -webkit-animation: menu-appear 0.5s;
+  -moz-animation: menu-appear 0.5s;
 }
 @media (max-width: 620px) {
   .blackout .menu-bg {
