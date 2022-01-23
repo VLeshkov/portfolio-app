@@ -544,16 +544,36 @@ button:hover {
 
 .contacts {
   background-image: url("assets/img/contacts-bg.jpg");
+  background-position: center;
+  background-size: auto 100%;
   height: 700px;
   display: flex;
   flex-direction: row-reverse;
 }
-
-.contacts-container {
+@media (max-width: 768px) {
+  .contacts {
+    height: 600px;
+    justify-content: center;
+  }
+}
+.contacts .contacts-container {
   width: 450px;
   padding-top: 30px;
 }
-.contacts-container h2 {
+@media (max-width: 490px) {
+  .contacts .contacts-container {
+    width: calc(100%);
+  }
+}
+@media (max-width: 768px) {
+  .contacts .contacts-container {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.contacts .contacts-container h2 {
   text-align: left;
   font-family: Merriweather;
   font-style: normal;
@@ -563,14 +583,21 @@ button:hover {
   color: #BDAE82;
   margin-bottom: 40px;
 }
-.contacts-container input, .contacts-container textarea {
+@media (max-width: 768px) {
+  .contacts .contacts-container h2 {
+    font-size: 32px;
+    line-height: 64px;
+    text-align: center;
+  }
+}
+.contacts .contacts-container input, .contacts .contacts-container textarea {
   display: block;
   border: solid #BDAE82 2px;
   box-sizing: border-box;
   background-color: transparent;
   width: 100%;
   caret-color: #BDAE82;
-  padding-left: 15px;
+  padding-left: 20px;
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -578,15 +605,15 @@ button:hover {
   line-height: 40px;
   color: #BDAE82;
 }
-.contacts-container input {
+.contacts .contacts-container input {
   height: 50px;
   margin-bottom: 20px;
 }
-.contacts-container textarea {
+.contacts .contacts-container textarea {
   height: 100px;
   resize: none;
 }
-.contacts-container input::placeholder, .contacts-container textarea::placeholder {
+.contacts .contacts-container input::placeholder, .contacts .contacts-container textarea::placeholder {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -594,10 +621,10 @@ button:hover {
   line-height: 40px;
   color: #BDAE82;
 }
-.contacts-container input:focus, .contacts-container textarea:focus {
+.contacts .contacts-container input:focus, .contacts .contacts-container textarea:focus {
   outline: 0;
 }
-.contacts-container button {
+.contacts .contacts-container button {
   display: block;
   margin-top: 30px;
 }
