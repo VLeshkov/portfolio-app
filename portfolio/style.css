@@ -120,7 +120,12 @@ header {
   display: flex;
   justify-content: space-between;
   background-image: url("assets/img/bg.jpg");
-  background-size: calc(100%);
+  background-position: top;
+}
+@media (max-width: 768px) {
+  header {
+    background-image: url("assets/img/bg-small.jpg");
+  }
 }
 header nav {
   width: 500px;
@@ -152,6 +157,7 @@ header .switch-lng {
   justify-content: space-between;
 }
 header .switch-lng span {
+  display: inline-block;
   cursor: pointer;
 }
 @media (max-width: 768px) {
@@ -176,6 +182,11 @@ header .logo {
     margin-left: 60px;
   }
 }
+@media (max-width: 600px) {
+  header .logo {
+    margin-left: calc(100% / 7.5 - 20px);
+  }
+}
 header .hamburger {
   margin: 20px 64px 20px 10px;
   height: 50px;
@@ -186,6 +197,11 @@ header .hamburger {
 @media (min-width: 769px) {
   header .hamburger {
     display: none;
+  }
+}
+@media (max-width: 600px) {
+  header .hamburger {
+    margin-right: calc(100% / 7.5 - 20px);
   }
 }
 header .logo:hover, header .hamburger:hover {
@@ -202,7 +218,6 @@ main {
   background-image: url("assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center -90px;
-  background-size: 100%;
   margin: 0;
   padding-top: 160px;
   padding-left: 80px;
@@ -213,8 +228,13 @@ main {
     height: 500px;
     padding-top: 55px;
     padding-left: 60px;
-    background-position: 25px -90px;
-    background-size: auto 590px;
+    background-image: url("assets/img/bg-small.jpg");
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 65px;
+    padding-left: calc(100% / 7.5 - 20px);
   }
 }
 
@@ -228,9 +248,14 @@ main {
     width: 390px;
   }
 }
+@media (max-width: 600px) {
+  .hero-content {
+    width: calc(100% - 50px);
+  }
+}
 .hero-content h1 {
   color: #FFF;
-  margin-top: 20px;
+  margin-top: 23px;
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
@@ -491,10 +516,11 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 @media (max-width: 768px) {
   .price .price-cards {
+    margin-bottom: 80px;
     gap: 50px;
     padding: 5px 0 0 0;
   }
@@ -522,7 +548,7 @@ button:hover {
   font-size: 28px;
   line-height: 56px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 20px;
   margin-bottom: 0;
 }
@@ -606,7 +632,7 @@ button:hover {
   display: block;
   border: solid #BDAE82 2px;
   box-sizing: border-box;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   caret-color: #BDAE82;
   padding-left: 20px;

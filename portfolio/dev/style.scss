@@ -131,8 +131,12 @@ header {
   display: flex;
   justify-content: space-between;
   background-image: url('assets/img/bg.jpg');
-  background-size: calc(100%);
+  background-position: top;
   @extend %font-inter-regular;
+
+  @media (max-width: 768px) {
+    background-image: url('assets/img/bg-small.jpg');
+  }
 
   nav {
     width: 500px;
@@ -166,8 +170,9 @@ header {
     width: 70px;
     display: flex;
     justify-content: space-between;
-    
+
     span {
+      display: inline-block;
       cursor: pointer;
     }
   }
@@ -182,7 +187,6 @@ header {
     color: #BDAE82
   }
 
-  
   .logo {
     margin: 20px;
     height: 50px;
@@ -196,6 +200,10 @@ header {
     @media (max-width: 768px) {
       margin-left: 60px;
     }
+
+    @media (max-width: 600px) {
+      margin-left: calc(100% / 7.5 - 20px);
+    }
   }
 
   .hamburger {
@@ -204,13 +212,17 @@ header {
     width: 50px;
     background-image: url('assets/svg/hamburger.svg');
     transition: 0.3s;
-  }
 
-  @media (min-width: 769px) {
-    .hamburger {
+    @media (min-width: 769px) {
       display: none;
     }
+
+    @media (max-width: 600px) {
+      margin-right: calc(100% / 7.5 - 20px);
+    }
   }
+
+
 
   .logo:hover, .hamburger:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
@@ -228,7 +240,6 @@ main {
   background-image: url('assets/img/bg.jpg');
   background-repeat: no-repeat;
   background-position: center -90px;
-  background-size: 100%;
   margin: 0;
   padding-top: 160px;
   padding-left: 80px;
@@ -238,8 +249,12 @@ main {
     height: 500px;
     padding-top: 55px;
     padding-left: 60px;
-    background-position: 25px -90px;
-    background-size: auto 590px;
+    background-image: url('assets/img/bg-small.jpg'); 
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 65px;
+    padding-left: calc(100% / 7.5 - 20px);
   }
 }
 
@@ -252,10 +267,14 @@ main {
     width: 390px;
   }
 
+  @media (max-width: 600px) {
+    width: calc(100% - 50px);
+  }
+
   h1 {
     @extend %font-merriweather;
     color: #FFF;
-    margin-top: 20px;
+    margin-top: 23px;
     margin-bottom: 10px;
 
     @media (max-width: 768px) {
@@ -530,19 +549,18 @@ button:hover {
   }
 }
 
-
 .price {
   padding: 0;
-
 
   .price-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   
     @media (max-width: 768px) {
+      margin-bottom: 80px;
       gap: 50px;
       padding: 5px 0 0 0;  
     }
@@ -570,7 +588,7 @@ button:hover {
     font-size: 28px;
     line-height: 56px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 20px;
     margin-bottom: 0;
     
@@ -656,7 +674,7 @@ button:hover {
       display: block;
       border: solid #BDAE82 2px;
       box-sizing: border-box;
-      background-color: transparent;
+      background-color: rgba($color: #000, $alpha: 0.5);
       width: 100%;
       caret-color: #BDAE82;
       padding-left: 20px;
