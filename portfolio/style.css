@@ -40,6 +40,10 @@ body {
   }
 }
 
+.div-padding {
+  padding: 0 20px;
+}
+
 a {
   transition: 0.3s;
 }
@@ -421,14 +425,29 @@ button:hover {
   width: 100%;
 }
 
+.video {
+  height: fit-content;
+}
+@media (max-width: 768px) {
+  .video {
+    padding: 0 0 55px 0;
+  }
+}
+
 .video-player {
-  position: relative;
+  background-image: url(assets/img/video-player.jpg);
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 705px;
 }
-.video-player img {
-  width: 100%;
+@media (max-width: 768px) {
+  .video-player {
+    background-image: url(assets/img/video-player-small.jpg);
+    margin: 70px 0 0 0;
+    height: 418px;
+  }
 }
 .video-player button {
   position: absolute;
@@ -436,10 +455,20 @@ button:hover {
   height: 130px;
   background-color: transparent;
   background-image: url("assets/svg/play-button.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .video-player button {
+    background-image: url("assets/svg/play-btn-small.svg");
+    width: 75px;
+    height: 75px;
+  }
 }
 .video-player button:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  transform: scale(1.2);
 }
 
 .price-cards {
