@@ -15,6 +15,9 @@
 </head>
 <body>
   <div class="container">
+    <div class="blackout">
+      <div class="menu-bg"></div>
+    </div>
     <header>
       <div class="logo"></div>
       <nav>
@@ -30,6 +33,11 @@
         <span id="switch-en" class ="switch-selected">en</span> / 
           <span id="switch-ru">ru</span>
       </div>
+      <div class="hamburger">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
     </header>
     <main>
       <section class="hero">
@@ -42,6 +50,7 @@
           <button>Hire me</button>
         </div>
       </section>
+
       <section class="skills" id="skills">
         <div class="section-title">
           <h2>Skills</h2>
@@ -65,9 +74,12 @@
           </div>
         </div>
       </section>
+
       <section class="portfolio" id="portfolio">
-        <div class="section-title">
-          <h2>Portfolio</h2>
+        <div class="div-padding">
+          <div class="section-title">
+            <h2>Portfolio</h2>
+          </div>
         </div>
         <div class="portfolio-controls">
           <button>Winter</button>
@@ -76,38 +88,43 @@
           <button class="button-checked">Autumn</button>
         </div>
         <div class="portfolio-cards">
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-1.jpg" alt="Example photo">
           </div>
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-2.jpg" alt="Example photo">
           </div>
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-3.jpg" alt="Example photo">
           </div>
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-4.jpg" alt="Example photo">
           </div>
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-5.jpg" alt="Example photo">
           </div>
-          <div>
+          <div class="portfolio-item">
             <img src="./assets/img/portfolio-autumn-6.jpg" alt="Example photo">
           </div>
         </div>
       </section>
+
       <section class="video" id="video">
-        <div class="section-title">
-          <h2>Video</h2>
+        <div class="div-padding">
+          <div class="section-title">
+            <h2>Video</h2>
+          </div>
         </div>
         <div class="video-player">
-          <img src="./assets/img/video-player.jpg" alt="video player">
           <button></button>
         </div>
       </section>
+
       <section class="price" id="price">
-        <div class="section-title">
-          <h2>Price</h2>
+        <div class="div-padding">
+          <div class="section-title">
+            <h2>Price</h2>
+          </div>
         </div>
         <div class="price-cards">
           <div class="price-card">
@@ -152,6 +169,7 @@
         </div>
       </section>
     </main>
+
     <footer>
       <div class="copyright">
         <div>©</div>
@@ -168,5 +186,6 @@
     </footer>
   </div>
   <script src="index.js"></script>
+  <script src="hamburger.js"></script>
 </body>
 </html>
