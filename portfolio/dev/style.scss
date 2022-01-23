@@ -62,10 +62,10 @@ button {
 
 @keyframes menu-appear {
   0% {
-    left: calc(100%);
+    right: -620px;
   }
   100% {
-    left: calc(14%);
+    right: 0px;
   }
 }
 
@@ -88,17 +88,21 @@ button {
   animation: blackout-appear 0.8s;
 
   .menu-bg {
-    width: calc(86%);
+    width: 620px;
     height: 100%;
-    left: calc(14%);
+    right: 0;
     background-color: rgba($color: #000, $alpha: 1.0);
     position: fixed;
     z-index: 2;
-    animation: menu-appear 0.3s;
+    animation: menu-appear 0.5s;
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
 
     .burger-menu-list {
       margin-top: 134px;
-      margin-left: 90px;
+      margin-left: calc(100% / 7);
 
       ul {
         list-style: none;
@@ -123,6 +127,11 @@ button {
       }
     }
   }
+}
+
+.open {
+  right: 0;
+  display: block;
 }
 
 header {
@@ -210,8 +219,11 @@ header {
     margin: 20px 64px 20px 10px;
     height: 50px;
     width: 50px;
-    background-image: url('assets/svg/hamburger.svg');
-    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
     @media (min-width: 769px) {
       display: none;
@@ -219,10 +231,34 @@ header {
 
     @media (max-width: 600px) {
       margin-right: calc(100% / 7.5 - 20px);
+    } 
+
+    .line {
+      width: 100%;
+      height: 3px;
+      background: #FFF;
+      transition: all 0.3s ease-in-out;
     }
   }
 
-
+  .hamburger.open {
+    z-index: 5;
+  }
+  .hamburger.open .line1 {
+    transform: translateY(13px) rotate(45deg);
+    height: 2px;
+    width: 60px;
+  }
+  
+  .hamburger.open .line2 {
+    opacity: 0;
+  }
+  
+  .hamburger.open .line3 {
+    transform: translateY(-13px) rotate(-45deg);
+    height: 2px;
+    width: 60px;
+  } 
 
   .logo:hover, .hamburger:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
