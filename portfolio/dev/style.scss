@@ -513,10 +513,23 @@ button:hover {
   }
 }
 
-.price-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+
+.price {
+  padding: 0;
+
+
+  .price-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 80px;
+  
+    @media (max-width: 768px) {
+      gap: 50px;
+      padding: 5px 0 0 0;  
+    }
+  }
 }
 
 .price-card {
@@ -524,6 +537,14 @@ button:hover {
   box-sizing: border-box;
   width: 450px;
   height: 505px;
+
+  @media (max-width: 768px) {
+    width: 420px;
+  }
+
+  @media (max-width: 462px) {
+    width: calc(100% - 40px);
+  }
 
   h3 {
     @extend %font-merriweather;
@@ -535,6 +556,10 @@ button:hover {
     padding-top: 10px;
     padding-bottom: 20px;
     margin-bottom: 0;
+    
+    @media (max-width: 768px) {
+      padding-top: 14px;
+    }
   }
 
   div {
@@ -567,7 +592,6 @@ button:hover {
 }
 
 .contacts {
-  margin-top: 100px;
   background-image: url('assets/img/contacts-bg.jpg');
   height: 700px;
   display: flex;
