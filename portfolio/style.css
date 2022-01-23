@@ -4,7 +4,7 @@
   font-size: 60px;
 }
 
-.price-card span, .skills-cards div p, button, .hero-content p, header, a {
+.price-card span, .skills .skills-cards div p, button, .hero-content p, header, a {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -14,7 +14,7 @@
   text-decoration: none;
 }
 
-.price-card span, .skills-cards div, body {
+.price-card span, body {
   padding: 0;
   margin: 0;
 }
@@ -280,13 +280,10 @@ button:hover {
 
 .section-title {
   width: 50%;
-  margin-top: 100px;
-  margin-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto 60px auto;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
-@media (max-width: 768px) {
+@media (max-width: 410px) {
   .section-title {
     background-image: none;
     width: fit-content;
@@ -315,27 +312,27 @@ button:hover {
   }
 }
 
-.skills-cards {
+.skills .skills-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.skills-cards div {
+.skills .skills-cards div {
   height: 240px;
   width: 320px;
   background-position: center top;
   background-repeat: no-repeat;
 }
-.skills-cards div p {
+.skills .skills-cards div p {
   text-align: center;
 }
-.skills-cards div p:nth-child(1) {
+.skills .skills-cards div p:nth-child(1) {
   margin-top: 100px;
   padding: 0;
   font-weight: 700;
   line-height: 40px;
 }
-.skills-cards div p:nth-child(2) {
+.skills .skills-cards div p:nth-child(2) {
   padding: 1px 20px;
   margin: 0;
   font-family: Inter;
@@ -346,32 +343,37 @@ button:hover {
   text-align: center;
   color: #FFFFFF;
 }
-.skills-cards div:nth-child(1) {
+.skills .skills-cards div:nth-child(1) {
   background-image: url("assets/svg/skill-camera.svg");
 }
-.skills-cards div:nth-child(2) {
+.skills .skills-cards div:nth-child(2) {
   background-image: url("assets/svg/skill-video.svg");
 }
-.skills-cards div:nth-child(3) {
+.skills .skills-cards div:nth-child(3) {
   background-image: url("assets/svg/skill-image.svg");
 }
-.skills-cards div:nth-child(4) {
+.skills .skills-cards div:nth-child(4) {
   background-image: url("assets/svg/skill-mic.svg");
 }
-@media (max-width: 768px) {
-  .skills-cards {
+@media (max-width: 1357px) {
+  .skills .skills-cards {
     justify-content: space-around;
     padding: 0 20px 60px 20px;
   }
-  .skills-cards div {
+  .skills .skills-cards div {
+    margin-bottom: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .skills .skills-cards div {
     height: 224px;
     width: 300px;
     margin-bottom: 35px;
   }
-  .skills-cards div p:nth-child(1) {
+  .skills .skills-cards div p:nth-child(1) {
     margin-top: 80px;
   }
-  .skills-cards div p:nth-child(2) {
+  .skills .skills-cards div p:nth-child(2) {
     padding: 0 10px;
     line-height: 22px;
   }

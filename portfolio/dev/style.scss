@@ -308,13 +308,10 @@ button:hover {
 
 .section-title {
   width: 50%;
-  margin-top: 100px;
-  margin-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto 60px auto;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 
-  @media (max-width: 768px) {
+  @media (max-width: 410px) {
     background-image: none;
     width: fit-content;
   }
@@ -343,74 +340,83 @@ button:hover {
   }
 }
 
-.skills-cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.skills {
+  // @media (max-width: 768px) {
+  //   padding: 0;
+  // }
 
-  div {
-    @extend %null-padding-margin;
-    height: 240px;
-    width: 320px;
-    background-position: center top;
-    background-repeat: no-repeat;
-
-    p {
-      @extend %font-inter-regular;
-      text-align: center;
-    }
-
-    p:nth-child(1) {
-      margin-top: 100px;
-      padding: 0;
-      font-weight: 700;
-      line-height: 40px;
-    }
-
-    p:nth-child(2) {
-      padding: 1px 20px;
-      margin: 0;
-      font-family: Inter;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 36px;
-      text-align: center;
-
-      color: #FFFFFF;
-      
-    }
-  }
-
-  div:nth-child(1) {
-    background-image: url('assets/svg/skill-camera.svg');
-  }
-  div:nth-child(2) {
-    background-image: url('assets/svg/skill-video.svg');
-  }
-  div:nth-child(3) {
-    background-image: url('assets/svg/skill-image.svg');
-  }
-  div:nth-child(4) {
-    background-image: url('assets/svg/skill-mic.svg');
-  }
-
-  @media (max-width: 768px) {
-    justify-content: space-around;
-    padding: 0 20px 60px 20px;
-
+  .skills-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
     div {
-      height: 224px;
-      width: 300px;
-      margin-bottom: 35px;
-
-      p:nth-child(1) {
-        margin-top: 80px;
+      height: 240px;
+      width: 320px;
+      background-position: center top;
+      background-repeat: no-repeat;
+  
+      p {
+        @extend %font-inter-regular;
+        text-align: center;
       }
-
+  
+      p:nth-child(1) {
+        margin-top: 100px;
+        padding: 0;
+        font-weight: 700;
+        line-height: 40px;
+      }
+  
       p:nth-child(2) {
-        padding: 0 10px;
-        line-height: 22px;
+        padding: 1px 20px;
+        margin: 0;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+  
+        color: #FFFFFF;
+      }
+    }
+  
+    div:nth-child(1) {
+      background-image: url('assets/svg/skill-camera.svg');
+    }
+    div:nth-child(2) {
+      background-image: url('assets/svg/skill-video.svg');
+    }
+    div:nth-child(3) {
+      background-image: url('assets/svg/skill-image.svg');
+    }
+    div:nth-child(4) {
+      background-image: url('assets/svg/skill-mic.svg');
+    }
+
+    @media (max-width: 1357px) {
+      justify-content: space-around;
+      padding: 0 20px 60px 20px;
+      div {
+        margin-bottom: 35px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      div {
+        height: 224px;
+        width: 300px;
+        margin-bottom: 35px;
+  
+        p:nth-child(1) {
+          margin-top: 80px;
+        }
+  
+        p:nth-child(2) {
+          padding: 0 10px;
+          line-height: 22px;
+        }
       }
     }
   }
