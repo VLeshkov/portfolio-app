@@ -286,6 +286,12 @@ button:hover {
   margin-right: auto;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 }
+@media (max-width: 768px) {
+  .section-title {
+    background-image: none;
+    width: fit-content;
+  }
+}
 .section-title h2 {
   width: fit-content;
   background-color: #000;
@@ -371,7 +377,12 @@ button:hover {
   }
 }
 
-.portfolio-controls {
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 0;
+  }
+}
+.portfolio .portfolio-controls {
   width: fit-content;
   margin: 0 auto;
   display: flex;
@@ -381,29 +392,28 @@ button:hover {
   gap: 5px;
 }
 @media (max-width: 768px) {
-  .portfolio-controls {
+  .portfolio .portfolio-controls {
     padding-top: 5px;
     width: 80%;
   }
 }
-.portfolio-controls button {
+.portfolio .portfolio-controls button {
   border: solid 2px #BDAE82;
   background-color: transparent;
   color: #BDAE82;
   transition: 0.3s;
 }
-.portfolio-controls button:hover {
+.portfolio .portfolio-controls button:hover {
   color: #FFF;
 }
-.portfolio-controls .button-checked {
+.portfolio .portfolio-controls .button-checked {
   background-color: #BDAE82;
   color: #000;
 }
-.portfolio-controls .button-checked:hover {
+.portfolio .portfolio-controls .button-checked:hover {
   color: #FFF;
 }
-
-.portfolio-cards {
+.portfolio .portfolio-cards {
   margin: 60px 0 100px 0;
   display: flex;
   flex-wrap: wrap;
@@ -411,17 +421,17 @@ button:hover {
   gap: 25px;
   height: fit-content;
 }
-.portfolio-cards .portfolio-item {
+.portfolio .portfolio-cards .portfolio-item {
   height: 560px;
   box-sizing: content-box;
 }
-@media (max-width: 500px) {
-  .portfolio-cards .portfolio-item {
-    width: 95%;
+@media (max-width: 490px) {
+  .portfolio .portfolio-cards .portfolio-item {
+    width: calc(100% - 40px);
     height: fit-content;
   }
 }
-.portfolio-cards .portfolio-item img {
+.portfolio .portfolio-cards .portfolio-item img {
   width: 100%;
 }
 

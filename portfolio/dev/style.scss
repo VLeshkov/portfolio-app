@@ -314,6 +314,11 @@ button:hover {
   margin-right: auto;
   background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
 
+  @media (max-width: 768px) {
+    background-image: none;
+    width: fit-content;
+  }
+
   h2 {
     @extend %font-merriweather;
     width: fit-content;
@@ -411,58 +416,64 @@ button:hover {
   }
 }
 
-.portfolio-controls {
-  width: fit-content;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-
+.portfolio {
   @media (max-width: 768px) {
-    padding-top: 5px;
-    width: 80%;
-  }  
+    padding: 0;
+  }
+
+  .portfolio-controls {
+    width: fit-content;
+    margin: 0 auto;
   
-  button {
-    border: solid 2px #BDAE82;
-    background-color: transparent;
-    color: #BDAE82;
-    transition: 0.3s;
-  }
-  button:hover {
-    color: #FFF;
-  }
-  .button-checked {
-    background-color: #BDAE82;
-    color: #000;
-  }
-  .button-checked:hover {
-    color: #FFF;
-  }
-}
-
-.portfolio-cards {
-  margin: 60px 0 100px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  height: fit-content;
-
-  .portfolio-item {
-    height: 560px;
-    box-sizing: content-box;
-
-    @media (max-width: 500px) {
-      width: 95%;
-      height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  
+    @media (max-width: 768px) {
+      padding-top: 5px;
+      width: 80%;
+    }  
+    
+    button {
+      border: solid 2px #BDAE82;
+      background-color: transparent;
+      color: #BDAE82;
+      transition: 0.3s;
     }
-
-    img {
-      width: 100%;
+    button:hover {
+      color: #FFF;
+    }
+    .button-checked {
+      background-color: #BDAE82;
+      color: #000;
+    }
+    .button-checked:hover {
+      color: #FFF;
+    }
+  }
+  
+  .portfolio-cards {
+    margin: 60px 0 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    height: fit-content;
+  
+    .portfolio-item {
+      height: 560px;
+      box-sizing: content-box;
+  
+      @media (max-width: 490px) {
+        width: calc(100% - 40px);
+        height: fit-content;
+      }
+  
+      img {
+        width: 100%;
+      }
     }
   }
 }
