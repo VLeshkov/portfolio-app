@@ -1,24 +1,41 @@
 // Self-assessment
 console.log(`Оценка ... / ... баллов:`);
 
-// Add change color function for the en/ru switch
+// Page translation
 
-let switchEng = document.getElementById('switch-en');
-let switchRu = document.getElementById('switch-ru');
+import i18Obj from './translate.js';
 
-switchEng.addEventListener('click', () => {
-  if (!switchEng.classList.contains('switch-selected')) {
-    switchEng.classList.add('switch-selected');
-    switchRu.classList.remove('switch-selected');
+const switchEng = document.getElementById('switch-en');
+const switchRu = document.getElementById('switch-ru');
+
+const textNodes = document.querySelectorAll('[data-i18n]');
+
+function translatePage(lang) {
+  textNodes.forEach(node => {
+    const currentAttribute = node.getAttribute('data-i18n');
+    if (node.placeholder) {
+      node.placeholder = i18Obj[lang][currentAttribute];
+    } else {
+      node.textContent = i18Obj[lang][currentAttribute];
+    }
+  });
+}
+
+function langSelect(selectedSwitch) {
+
+  if (!selectedSwitch.target.classList.contains('switch-selected')) {
+    switchEng.classList.toggle('switch-selected');
+    switchRu.classList.toggle('switch-selected');
+
+    translatePage(selectedSwitch.target.textContent);
   }
-});
+}
 
-switchRu.addEventListener('click', () => {
-  if (!switchRu.classList.contains('switch-selected')) {
-    switchRu.classList.add('switch-selected');
-    switchEng.classList.remove('switch-selected');
-  }
-});
+[switchEng, switchRu].forEach(langSwitch => 
+  langSwitch.addEventListener('click', langSelect)
+);
+
+
 
 // code for portfolio buttons
 
