@@ -178,8 +178,10 @@ header {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-image: url('assets/img/bg.jpg');
   background-position: top;
+  padding: 0 20px;
   @extend %font-inter-regular;
 
   @media (max-width: 768px) {
@@ -236,7 +238,6 @@ header {
   }
 
   .logo {
-    margin: 20px;
     height: 50px;
     width: 50px;
 
@@ -299,7 +300,20 @@ header {
     width: 60px;
   } 
 
-  .logo:hover, .hamburger:hover {
+  .theme-switch {
+    height: 40px;
+    width: 40px;
+    background-image: url('./assets/svg/sun.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .theme-switch.light-theme {
+    background-image: url('./assets/svg/moon.svg');
+  }
+
+  .logo:hover, .hamburger:hover, 
+    .theme-switch:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
   }
@@ -435,10 +449,6 @@ button:hover {
 }
 
 .skills {
-  // @media (max-width: 768px) {
-  //   padding: 0;
-  // }
-
   .skills-cards {
     display: flex;
     justify-content: space-between;
@@ -471,8 +481,6 @@ button:hover {
         font-size: 18px;
         line-height: 36px;
         text-align: center;
-  
-        color: #FFFFFF;
       }
     }
   
@@ -867,6 +875,122 @@ footer {
   }
   li:nth-child(4) {
     background-image: url('assets/svg/pinterest.svg');
+  }
+  li:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+    cursor: pointer;
+  }
+}
+
+// Light theme
+
+body.light-theme {
+  background-color: #FFF;
+}
+
+header.light-theme, .hero.light-theme {
+  background-image: url('./assets/img/bg-light.jpg');
+}
+
+header.light-theme {
+  .switch-selected {
+    color: #FFF;
+  }
+}
+
+.logo.light-theme {
+  filter: invert(100%);
+}
+
+.light-theme {
+  color: #000;
+}
+
+.hero-content.light-theme {
+  h1 {
+    color: #000;
+  }
+  p {
+    color: #000;
+  }
+}
+.hero-content {
+  button.light-theme {
+    background-color: #FFF;
+  }
+}
+
+.section-title.light-theme {
+  background-image: linear-gradient(to top, #FFF 39px, #000 39px, #000 41px, #FFF 41px);
+  h2 {
+    color: #000;
+    background-color: #FFF;
+  }
+}
+
+.skills-cards.light-theme {  
+  div {  
+    p {
+      color: #000;
+    }
+  }
+}
+
+.portfolio-controls {
+  button.light-theme {
+    border: solid 2px #BDAE82;
+    background-color: #BDAE82;
+    color: #000;
+  }
+  button.light-theme:hover {
+    color: #FFF;
+  }
+  button.light-theme.button-checked {
+    background-color: #000;
+    border: solid 2px #000;
+    color: #BDAE82;
+  }
+  button.light-theme.button-checked:hover {
+    color: #FFF;
+  }
+}
+
+.price-card.light-theme {
+  h3, div, span {
+    color: #000;
+  }
+}
+
+.contacts.light-theme {
+  background-image: url('assets/img/contacts-light.jpg');
+  .contacts-container {  
+    h2 {
+      color: #FFF;
+    }
+    input, textarea {
+      background-color: rgba($color: #FFF, $alpha: 0.5);
+      caret-color: #000;
+    }
+    input, textarea, input::placeholder, textarea::placeholder {
+      color: #000;
+    }  
+    button {
+      background-color: #FFF;
+    }
+  }
+}
+
+footer.light-theme {
+  color: #000;
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #BDAE82;
+  }
+  li {
+    filter: invert(100%);
   }
   li:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)

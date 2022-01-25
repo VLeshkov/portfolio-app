@@ -165,8 +165,10 @@ header {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-image: url("assets/img/bg.jpg");
   background-position: top;
+  padding: 0 20px;
 }
 @media (max-width: 768px) {
   header {
@@ -215,7 +217,6 @@ header .switch-selected {
   color: #BDAE82;
 }
 header .logo {
-  margin: 20px;
   height: 50px;
   width: 50px;
   background-image: url("./assets/svg/logo.svg");
@@ -275,7 +276,18 @@ header .hamburger.open .line3 {
   height: 2px;
   width: 60px;
 }
-header .logo:hover, header .hamburger:hover {
+header .theme-switch {
+  height: 40px;
+  width: 40px;
+  background-image: url("./assets/svg/sun.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .theme-switch.light-theme {
+  background-image: url("./assets/svg/moon.svg");
+}
+header .logo:hover, header .hamburger:hover,
+header .theme-switch:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
@@ -437,7 +449,6 @@ button:hover {
   font-size: 18px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
 }
 .skills .skills-cards div:nth-child(1) {
   background-image: url("assets/svg/skill-camera.svg");
@@ -816,6 +827,104 @@ footer li:nth-child(4) {
   background-image: url("assets/svg/pinterest.svg");
 }
 footer li:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  cursor: pointer;
+}
+
+body.light-theme {
+  background-color: #FFF;
+}
+
+header.light-theme, .hero.light-theme {
+  background-image: url("./assets/img/bg-light.jpg");
+}
+
+header.light-theme .switch-selected {
+  color: #FFF;
+}
+
+.logo.light-theme {
+  filter: invert(100%);
+}
+
+.light-theme {
+  color: #000;
+}
+
+.hero-content.light-theme h1 {
+  color: #000;
+}
+.hero-content.light-theme p {
+  color: #000;
+}
+
+.hero-content button.light-theme {
+  background-color: #FFF;
+}
+
+.section-title.light-theme {
+  background-image: linear-gradient(to top, #FFF 39px, #000 39px, #000 41px, #FFF 41px);
+}
+.section-title.light-theme h2 {
+  color: #000;
+  background-color: #FFF;
+}
+
+.skills-cards.light-theme div p {
+  color: #000;
+}
+
+.portfolio-controls button.light-theme {
+  border: solid 2px #BDAE82;
+  background-color: #BDAE82;
+  color: #000;
+}
+.portfolio-controls button.light-theme:hover {
+  color: #FFF;
+}
+.portfolio-controls button.light-theme.button-checked {
+  background-color: #000;
+  border: solid 2px #000;
+  color: #BDAE82;
+}
+.portfolio-controls button.light-theme.button-checked:hover {
+  color: #FFF;
+}
+
+.price-card.light-theme h3, .price-card.light-theme div, .price-card.light-theme span {
+  color: #000;
+}
+
+.contacts.light-theme {
+  background-image: url("assets/img/contacts-light.jpg");
+}
+.contacts.light-theme .contacts-container h2 {
+  color: #FFF;
+}
+.contacts.light-theme .contacts-container input, .contacts.light-theme .contacts-container textarea {
+  background-color: rgba(255, 255, 255, 0.5);
+  caret-color: #000;
+}
+.contacts.light-theme .contacts-container input, .contacts.light-theme .contacts-container textarea, .contacts.light-theme .contacts-container input::placeholder, .contacts.light-theme .contacts-container textarea::placeholder {
+  color: #000;
+}
+.contacts.light-theme .contacts-container button {
+  background-color: #FFF;
+}
+
+footer.light-theme {
+  color: #000;
+}
+footer.light-theme a {
+  color: #000;
+}
+footer.light-theme a:hover {
+  color: #BDAE82;
+}
+footer.light-theme li {
+  filter: invert(100%);
+}
+footer.light-theme li:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
   cursor: pointer;
 }
