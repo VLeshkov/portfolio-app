@@ -27,7 +27,7 @@ function langSelect(selectedSwitch) {
     switchEng.classList.toggle('switch-selected');
     switchRu.classList.toggle('switch-selected');
 
-    translatePage(selectedSwitch.target.textContent);
+    translatePage(selectedSwitch.target.textContent.toLowerCase());
   }
 }
 
