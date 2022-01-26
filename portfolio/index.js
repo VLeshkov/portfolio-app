@@ -60,10 +60,22 @@ themeSwitcher.addEventListener('click', changeTheme);
 
 
 
-// code for portfolio buttons
+// Portfolio switch
 
 let portfolioButtons = document.querySelector('.portfolio-controls').
   querySelectorAll('button');
+
+function changeSeason(season) {
+  const portfolioCards = document.querySelector('.portfolio-cards');
+  portfolioCards.innerHTML = ``;
+
+  for (let num = 1; num <= 6; num++) {
+    portfolioCards.innerHTML += `
+    <div class="portfolio-item">
+      <img src="./assets/img/${season}/${num}.jpg" alt="Example photo">
+    </div>`;
+  }
+}
 
 function getSelectedButton(buttonList) {
   for (let i = 0; i < buttonList.length; i++) {
@@ -80,6 +92,8 @@ function changeCheckedButton(event) {
   if (!currentButton.classList.contains('button-checked')) {
     getSelectedButton(portfolioButtons).classList.remove('button-checked');
     currentButton.classList.add('button-checked');
+
+    changeSeason(currentButton.getAttribute('data-i18n'));
   }
 }
 
