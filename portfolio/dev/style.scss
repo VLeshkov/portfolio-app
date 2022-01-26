@@ -883,82 +883,98 @@ footer {
   }
 }
 
+
+
+
 // Light theme
 
 body.light-theme {
   background-color: #FFF;
 }
 
-header.light-theme, .hero.light-theme {
-  background-image: url('./assets/img/bg-light.jpg');
-}
-
 header.light-theme {
+  background-image: url('assets/img/bg-light.jpg');
+
+  @media (max-width: 768px) {
+    background-image: url('assets/img/bg-small-light.jpg');
+  }
+
+  a, .switch-lng {
+    color: #000;
+  }
+
   .switch-selected {
     color: #FFF;
   }
-}
 
-.logo.light-theme {
-  filter: invert(100%);
-}
-
-.light-theme {
-  color: #000;
-}
-
-.hero-content.light-theme {
-  h1 {
-    color: #000;
+  .logo {
+    filter: invert(100%);
   }
-  p {
-    color: #000;
+
+  .hamburger {
+    .line {
+      background: #000;
+    }
   }
-}
-.hero-content {
-  button.light-theme {
-    background-color: #FFF;
+
+  .theme-switch {
+    background-image: url('./assets/svg/moon.svg');
   }
 }
 
-.section-title.light-theme {
-  background-image: linear-gradient(to top, #FFF 39px, #000 39px, #000 41px, #FFF 41px);
-  h2 {
-    color: #000;
-    background-color: #FFF;
-  }
-}
+.hero.light-theme {
+  background-image: url('./assets/img/bg-light.jpg');
 
-.skills-cards.light-theme {  
-  div {  
-    p {
+  @media (max-width: 768px) {
+    background-image: url('./assets/img/bg-small-light.jpg'); 
+  }
+
+  .hero-content {
+    h1, p {
       color: #000;
+    }
+    button {
+      background-color: #FFF;
     }
   }
 }
 
-.portfolio-controls {
-  button.light-theme {
-    border: solid 2px #BDAE82;
-    background-color: #BDAE82;
-    color: #000;
-  }
-  button.light-theme:hover {
-    color: #FFF;
-  }
-  button.light-theme.button-checked {
-    background-color: #000;
-    border: solid 2px #000;
-    color: #BDAE82;
-  }
-  button.light-theme.button-checked:hover {
-    color: #FFF;
+.skills.light-theme {
+  .skills-cards {
+    div {  
+      p {
+        color: #000;
+      }
+    }
   }
 }
 
-.price-card.light-theme {
-  h3, div, span {
-    color: #000;
+.portfolio.light-theme {
+  .portfolio-controls {
+    button {
+      border: solid 2px #BDAE82;
+      background-color: #BDAE82;
+      color: #000;
+    }
+    button:hover {
+      color: #FFF;
+    }
+    button.button-checked {
+      background-color: #000;
+      border: solid 2px #000;
+      color: #BDAE82;
+    }
+    button.button-checked:hover {
+      color: #FFF;
+    }
+  }
+}
+
+.price.light-theme {
+  .price-card {
+    h3, div, span {
+      color: #000;
+    }
   }
 }
 
@@ -966,7 +982,7 @@ header.light-theme {
   background-image: url('assets/img/contacts-light.jpg');
   .contacts-container {  
     h2 {
-      color: #FFF;
+      color: #000;
     }
     input, textarea {
       background-color: rgba($color: #FFF, $alpha: 0.5);
@@ -996,5 +1012,16 @@ footer.light-theme {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
     contrast(87%);
     cursor: pointer;
+  }
+}
+
+.section-title.light-theme {
+  background-image: linear-gradient(to top, #FFF 39px, #000 39px, #000 41px, #FFF 41px);
+  h2 {
+    color: #000;
+    background-color: #FFF;
+  }
+  @media (max-width:768px) {
+    background-image: linear-gradient(to top, #FFF 19px, #000 19px, #000 21px, #FFF 21px);
   }
 }

@@ -39,22 +39,14 @@ function langSelect(selectedSwitch) {
 
 const themeSwitcher = document.querySelector('.theme-switch');
 const themeElements = [
-  themeSwitcher,
-  document.querySelector('body'),
-
-  document.querySelector('header'),
-  document.querySelector('.logo'),
-  ...document.querySelector('header').querySelectorAll('a'),
-
-  document.querySelector('.hero'),
-  document.querySelector('.hero-content'),
   ...document.querySelectorAll('button'),
-
   ...document.querySelectorAll('.section-title'),
-  document.querySelector('.skills-cards'),
-
-  ...document.querySelectorAll('.price-card'),
-
+  document.querySelector('body'),
+  document.querySelector('header'),
+  document.querySelector('.hero'),
+  document.querySelector('.skills'),
+  document.querySelector('.portfolio'),
+  document.querySelector('.price'),
   document.querySelector('.contacts'),
   document.querySelector('footer')
 ];
