@@ -922,6 +922,19 @@ header.light-theme {
   }
 }
 
+.menu-bg.light-theme {
+  background-color: rgba($color: #FFF, $alpha: 1.0);
+  .burger-menu-list {
+    ul {
+      li {
+        a {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
 .hero.light-theme {
   background-image: url('./assets/img/bg-light.jpg');
 

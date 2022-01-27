@@ -41,6 +41,7 @@ const themeSwitcher = document.querySelector('.theme-switch');
 const themeElements = [
   ...document.querySelectorAll('button'),
   ...document.querySelectorAll('.section-title'),
+  document.querySelector('.menu-bg'),
   document.querySelector('body'),
   document.querySelector('header'),
   document.querySelector('.hero'),

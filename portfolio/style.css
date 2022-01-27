@@ -859,6 +859,13 @@ header.light-theme .theme-switch {
   background-image: url("./assets/svg/moon.svg");
 }
 
+.menu-bg.light-theme {
+  background-color: white;
+}
+.menu-bg.light-theme .burger-menu-list ul li a {
+  color: #000;
+}
+
 .hero.light-theme {
   background-image: url("./assets/img/bg-light.jpg");
 }
