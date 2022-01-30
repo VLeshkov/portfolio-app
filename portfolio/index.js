@@ -1,9 +1,38 @@
 // Self-assessment
 console.log(`Оценка ... / ... баллов:`);
 
+// Local storage
+let pageLanguage = 'en';
+let pageTheme = 'dark';
+
+function setLocalStorage() {
+  localStorage.setItem('lang', pageLanguage);
+  localStorage.setItem('theme', pageTheme);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem('lang')) {
+    const lang = localStorage.getItem('lang');
+    document.getElementById(`switch-${lang}`).click();
+  }
+  if (localStorage.getItem('theme')) {
+    const theme = localStorage.getItem('theme');
+    if (theme !== pageTheme) {
+      changeTheme();
+    }
+  }
+}
+
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
+
+// Burger menu
+
+import './js/hamburger.js';
+
 // Page translation
 
-import i18Obj from './translate.js';
+import i18Obj from './js/translate.js';
 
 const switchEng = document.getElementById('switch-en');
 const switchRu = document.getElementById('switch-ru');
@@ -12,13 +41,15 @@ const textNodes = document.querySelectorAll('[data-i18n]');
 
 function translatePage(lang) {
   textNodes.forEach(node => {
-    const currentAttribute = node.getAttribute('data-i18n');
+    const currentAttribute = node.dataset.i18n;
     if (node.placeholder) {
       node.placeholder = i18Obj[lang][currentAttribute];
     } else {
       node.textContent = i18Obj[lang][currentAttribute];
     }
   });
+
+  pageLanguage = lang;
 }
 
 function langSelect(selectedSwitch) {
@@ -35,7 +66,7 @@ function langSelect(selectedSwitch) {
   langSwitch.addEventListener('click', langSelect)
 );
 
-// Theme switch
+// Dark-light theme switch
 
 const themeSwitcher = document.querySelector('.theme-switch');
 const themeElements = [
@@ -52,52 +83,57 @@ const themeElements = [
   document.querySelector('footer')
 ];
 
-
 function changeTheme() {
   themeElements.forEach(element => element.classList.toggle('light-theme'));
+
+  if (document.querySelector('header').classList.contains('light-theme')) {
+    pageTheme = 'light';
+  } else {
+    pageTheme = 'dark';
+  }
 }
 
 themeSwitcher.addEventListener('click', changeTheme);
 
 
+// Images cache
+
+function preloadImages(season) {
+  for(let i = 1; i <= 6; i++) {
+    const img = new Image();
+    img.src = `./assets/img/${season}/${i}.jpg`;
+  }
+}
+
+['winter', 'spring', 'summer', 'autumn'].forEach(season => 
+  preloadImages(season));
 
 // Portfolio switch
 
-let portfolioButtons = document.querySelector('.portfolio-controls').
+const portfolioButtons = document.querySelector('.portfolio-controls').
   querySelectorAll('button');
 
-function changeSeason(season) {
-  const portfolioCards = document.querySelector('.portfolio-cards');
-  portfolioCards.innerHTML = ``;
+portfolioButtons.forEach(btn => {
+  btn.addEventListener('click', clickButton);
+});
 
-  for (let num = 1; num <= 6; num++) {
-    portfolioCards.innerHTML += `
-    <div class="portfolio-item">
-      <img src="./assets/img/${season}/${num}.jpg" alt="Example photo">
-    </div>`;
-  }
+function changeSeasonImages(season) {
+  const portfolioImages = document.querySelectorAll('.portfolio-image');
+  portfolioImages.forEach((img, index) => 
+    img.src = `./assets/img/${season}/${index + 1}.jpg`);
 }
 
-function getSelectedButton(buttonList) {
-  for (let i = 0; i < buttonList.length; i++) {
-    if (buttonList[i].classList.contains('button-checked')) {
-      return buttonList[i];
-    }
-  }
+function selectButton(clickedButton) {
+  const selectedButton = document.querySelector('.button-checked');
+  selectedButton.classList.remove('button-checked');
+  clickedButton.classList.add('button-checked');
 }
 
-function changeCheckedButton(event) {
-  let clickedIndex = Array.from(portfolioButtons).indexOf(event.target);
-  let currentButton = portfolioButtons[clickedIndex];
+function clickButton(event) {
+  const currentButton = event.target;
 
   if (!currentButton.classList.contains('button-checked')) {
-    getSelectedButton(portfolioButtons).classList.remove('button-checked');
-    currentButton.classList.add('button-checked');
-
-    changeSeason(currentButton.getAttribute('data-i18n'));
+    selectButton(currentButton);
+    changeSeasonImages(currentButton.dataset.season);
   }
 }
-
-portfolioButtons.forEach(btn => {
-  btn.addEventListener('click', changeCheckedButton);
-})
