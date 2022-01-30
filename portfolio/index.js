@@ -137,3 +137,30 @@ function clickButton(event) {
     changeSeasonImages(currentButton.dataset.season);
   }
 }
+
+// Ripple button
+
+function createRipple(e) {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  console.log(x, y)
+
+  const buttonTop = e.target.offsetTop - window.scrollY;
+  const buttonLeft = e.target.offsetLeft;
+
+  const xInside = x - buttonLeft;
+  const yInside = y - buttonTop;
+
+  const circle = document.createElement('span');
+  circle.classList.add('circle');
+  circle.style.top = yInside + 'px';
+  circle.style.left = xInside + 'px';
+
+  this.appendChild(circle);
+
+  setTimeout(() => circle.remove(), 500);
+}
+
+const rippleButton = document.querySelectorAll('button');
+rippleButton.forEach(btn => btn.addEventListener('click', createRipple));
