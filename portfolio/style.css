@@ -4,7 +4,7 @@
   font-size: 60px;
 }
 
-.price-card span, .skills .skills-cards div p, button, .hero-content p, header, a {
+.price-card span, .skills .skills-cards div p, .hero-content p, header, button, a {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -54,8 +54,45 @@ a:hover {
 
 button {
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 55px;
+  width: 220px;
+  background-color: #BDAE82;
+  border: none;
+  color: #000;
+  transition: 0.3s;
 }
 
+button:hover {
+  color: #FFF;
+}
+
+button:focus {
+  outline: none;
+}
+
+button .circle {
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+button.light-theme .circle {
+  background-color: #BDAE82;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
 @-webkit-keyframes menu-appear {
   0% {
     right: -620px;
@@ -165,12 +202,20 @@ header {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-image: url("assets/img/bg.jpg");
   background-position: top;
+  padding: 0 20px;
+}
+@media (min-width: 1440px) {
+  header {
+    gap: 25px;
+  }
 }
 @media (max-width: 768px) {
   header {
     background-image: url("assets/img/bg-small.jpg");
+    padding: 0;
   }
 }
 header nav {
@@ -215,7 +260,6 @@ header .switch-selected {
   color: #BDAE82;
 }
 header .logo {
-  margin: 20px;
   height: 50px;
   width: 50px;
   background-image: url("./assets/svg/logo.svg");
@@ -275,7 +319,18 @@ header .hamburger.open .line3 {
   height: 2px;
   width: 60px;
 }
-header .logo:hover, header .hamburger:hover {
+header .theme-switch {
+  height: 40px;
+  width: 40px;
+  background-image: url("./assets/svg/sun.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .theme-switch.light-theme {
+  background-image: url("./assets/svg/moon.svg");
+}
+header .logo:hover, header .hamburger:hover,
+header .theme-switch:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
@@ -356,19 +411,6 @@ main {
   }
 }
 
-button {
-  height: 55px;
-  width: 220px;
-  background-color: #BDAE82;
-  border: none;
-  color: #000;
-  transition: 0.3s;
-}
-
-button:hover {
-  color: #FFF;
-}
-
 .skills, .portfolio,
 .video, .price, .contacts {
   padding: 0 20px;
@@ -437,7 +479,6 @@ button:hover {
   font-size: 18px;
   line-height: 36px;
   text-align: center;
-  color: #FFFFFF;
 }
 .skills .skills-cards div:nth-child(1) {
   background-image: url("assets/svg/skill-camera.svg");
@@ -818,6 +859,137 @@ footer li:nth-child(4) {
 footer li:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
   cursor: pointer;
+}
+
+body.light-theme {
+  background-color: #FFF;
+}
+
+header.light-theme {
+  background-image: url("assets/img/bg-light.jpg");
+}
+@media (max-width: 768px) {
+  header.light-theme {
+    background-image: url("assets/img/bg-small-light.jpg");
+  }
+}
+header.light-theme a, header.light-theme .switch-lng {
+  color: #000;
+}
+header.light-theme .switch-selected {
+  color: #FFF;
+}
+header.light-theme .logo {
+  filter: invert(100%);
+}
+header.light-theme .hamburger .line {
+  background: #000;
+}
+header.light-theme .theme-switch {
+  background-image: url("./assets/svg/moon.svg");
+}
+
+.menu-bg.light-theme {
+  background-color: white;
+}
+.menu-bg.light-theme .burger-menu-list ul li a {
+  color: #000;
+}
+
+.hero.light-theme {
+  background-image: url("./assets/img/bg-light.jpg");
+}
+@media (max-width: 768px) {
+  .hero.light-theme {
+    background-image: url("./assets/img/bg-small-light.jpg");
+  }
+}
+.hero.light-theme .hero-content h1, .hero.light-theme .hero-content p {
+  color: #000;
+}
+.hero.light-theme .hero-content button {
+  background-color: #FFF;
+}
+.hero.light-theme .hero-content button:hover {
+  background-color: #1C1C1C;
+  color: #BDAE82;
+}
+
+.skills.light-theme .skills-cards div p {
+  color: #000;
+}
+
+.portfolio.light-theme .portfolio-controls button {
+  border: none;
+  background-color: #BDAE82;
+  color: #000;
+}
+.portfolio.light-theme .portfolio-controls button:hover {
+  background-color: #1C1C1C;
+  color: #BDAE82;
+}
+.portfolio.light-theme .portfolio-controls button.button-checked {
+  background-color: #1C1C1C;
+  color: #BDAE82;
+}
+
+.price.light-theme .price-card h3, .price.light-theme .price-card div, .price.light-theme .price-card span {
+  color: #000;
+}
+.price.light-theme button:hover {
+  background-color: #1C1C1C;
+  color: #BDAE82;
+}
+
+.contacts.light-theme {
+  background-image: url("assets/img/contacts-light.jpg");
+}
+.contacts.light-theme .contacts-container h2 {
+  color: #000;
+}
+.contacts.light-theme .contacts-container input, .contacts.light-theme .contacts-container textarea {
+  background-color: rgba(255, 255, 255, 0.5);
+  caret-color: #000;
+}
+.contacts.light-theme .contacts-container input, .contacts.light-theme .contacts-container textarea, .contacts.light-theme .contacts-container input::placeholder, .contacts.light-theme .contacts-container textarea::placeholder {
+  color: #000;
+}
+.contacts.light-theme .contacts-container button {
+  background-color: #FFF;
+}
+.contacts.light-theme .contacts-container button:hover {
+  background-color: #1C1C1C;
+  color: #BDAE82;
+}
+
+footer.light-theme {
+  color: #000;
+}
+footer.light-theme a {
+  color: #000;
+}
+footer.light-theme a:hover {
+  color: #BDAE82;
+}
+footer.light-theme li {
+  filter: invert(100%);
+}
+footer.light-theme li:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  cursor: pointer;
+}
+
+.section-title.light-theme {
+  background-image: linear-gradient(to top, #FFF 39px, #000 39px, #000 41px, #FFF 41px);
+}
+.section-title.light-theme h2 {
+  color: #000;
+  background-color: #FFF;
+}
+@media (max-width: 768px) {
+  .section-title.light-theme {
+    background-image: linear-gradient(to top, #FFF 19px, #000 19px, #000 21px, #FFF 21px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
