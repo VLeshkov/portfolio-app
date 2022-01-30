@@ -207,9 +207,15 @@ header {
   background-position: top;
   padding: 0 20px;
 }
+@media (min-width: 1440px) {
+  header {
+    gap: 25px;
+  }
+}
 @media (max-width: 768px) {
   header {
     background-image: url("assets/img/bg-small.jpg");
+    padding: 0;
   }
 }
 header nav {
