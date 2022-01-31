@@ -166,5 +166,5 @@ function createRipple(e) {
   setTimeout(() => circle.remove(), 500);
 }
 
-const rippleButton = document.querySelectorAll('button');
+const rippleButton = document.querySelectorAll('.ripple');
 rippleButton.forEach(btn => btn.addEventListener('click', createRipple));
